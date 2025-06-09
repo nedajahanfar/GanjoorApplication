@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import styles from "../styles/DesktopDrawer.styles";
+import { Poet } from "../../poets/PoetsList";
 
-const DesktopDrawer = () => {
+type Props = {
+  poets: Poet[];
+};
+
+const DesktopDrawer = ({ poets }: Props) => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -11,15 +16,23 @@ const DesktopDrawer = () => {
         <TouchableOpacity onPress={() => setOpen(!open)} style={styles.toggleButton}>
           <Text>{open ? "←" : "→"}</Text>
         </TouchableOpacity>
+
         {open && (
           <View style={styles.menu}>
-            <Text style={styles.link}>Home</Text>
-            <Text style={styles.link}>About</Text>
+            <Text style={styles.sectionTitle}>Poets :</Text>
+            <FlatList
+              data={poets}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({ item }) => <Text style={styles.link}>{item.name}</Text>}
+            />
           </View>
         )}
       </View>
+
       <View style={[styles.content, open ? styles.contentShrink : styles.contentExpand]}>
-        <Text>Main Content Area</Text>
+        <View style={styles.centeredContent}>
+          <Text>Main Content Area</Text>
+        </View>    
       </View>
     </View>
   );

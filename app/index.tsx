@@ -1,17 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import Layout from './_layout';
 
-export default function HomeScreen() {
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Home</Text>
-    </View>
+    <NavigationContainer>
+      <Layout />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
