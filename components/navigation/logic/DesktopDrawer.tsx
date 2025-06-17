@@ -31,7 +31,7 @@ const DesktopDrawer = ({ poets }: Props) => {
 
       <View style={[styles.content, open ? styles.contentShrink : styles.contentExpand]}>
         <View style={styles.centeredContent}>
-          <Text>Main Content Area</Text>
+          <Text >Main Content Area</Text>
         </View>    
       </View>
     </View>
