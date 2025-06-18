@@ -1,8 +1,13 @@
-import React from 'react';
-import { useWindowDimensions, View, Text, ActivityIndicator } from 'react-native';
-import { usePoets } from '../../../hooks/usePoets';
-import DesktopDrawer from './DesktopDrawer';
-import MobileDrawer from './MobileDrawer';
+import React from "react";
+import {
+  useWindowDimensions,
+  View,
+  Text,
+  ActivityIndicator,
+} from "react-native";
+import { usePoets } from "../../../hooks/usePoets";
+import DesktopDrawer from "./DesktopDrawer";
+import MobileDrawer from "./MobileDrawer";
 
 const DrawerSwitcher = () => {
   const { width } = useWindowDimensions();
@@ -22,9 +27,7 @@ const DrawerSwitcher = () => {
   if (error) {
     return (
       <View className="flex-1 justify-center items-center">
-        <Text className="text-red-600 font-bold">
-          خطا: {error.message}
-        </Text>
+        <Text className="text-red-600 font-bold">خطا: {error.message}</Text>
       </View>
     );
   }
@@ -37,9 +40,11 @@ const DrawerSwitcher = () => {
     );
   }
 
-  return isLargeScreen
-    ? <DesktopDrawer poets={poets} />
-    : <MobileDrawer poets={poets} />;
+  return isLargeScreen ? (
+    <DesktopDrawer poets={poets} />
+  ) : (
+    <MobileDrawer poets={poets} />
+  );
 };
 
 export default DrawerSwitcher;

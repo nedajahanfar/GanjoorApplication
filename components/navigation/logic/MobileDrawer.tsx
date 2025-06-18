@@ -3,7 +3,6 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import type { Poet } from "../../../modules/poetType";
 
-
 type Props = {
   poets: Poet[];
 };
