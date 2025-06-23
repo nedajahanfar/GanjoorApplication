@@ -7,6 +7,7 @@ export function checkPoets(data: any): Poet[] {
 
   data.forEach((poet) => {
     if (typeof poet.id !== "number" || typeof poet.name !== "string") {
+
       throw new Error(`Invalid poet structure: ${JSON.stringify(poet)}`);
     }
   });

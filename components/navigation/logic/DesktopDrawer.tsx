@@ -19,16 +19,13 @@ const DesktopDrawer = ({ poets }: Props) => {
         <TouchableOpacity
           onPress={() => setOpen(!open)}
           className="w-12 h-12 border-b border-gray-300 flex items-center justify-center"
-          style={{ alignSelf: "flex-start" }}
-        >
+          style={{ alignSelf: "flex-start" }}>
           <Text className="text-lg select-none">{open ? "←" : "→"}</Text>
         </TouchableOpacity>
 
         {open && (
           <View className="flex-1 px-4 py-2">
-            <Text className="text-xl font-semibold mb-3 text-right">
-              Poets :
-            </Text>
+            <Text className="text-xl font-semibold mb-3 text-right">Poets :</Text>
             <FlatList
               data={poets}
               keyExtractor={(item) => item.id.toString()}
