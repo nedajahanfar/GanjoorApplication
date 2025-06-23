@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-import { Poet } from "../../../modules/poetType";
+import styles from "../styles/DesktopDrawer.styles";
+import { Poet } from "../../poets/PoetsList";
+
 
 type Props = {
   poets: Poet[];
