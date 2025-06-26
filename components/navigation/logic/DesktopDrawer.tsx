@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
-import { Poet } from "../../../modules/poetType";
+import { Poet } from "../../../modules/poetSchema";
 
 type Props = {
   poets: Poet[];
@@ -50,7 +50,9 @@ const DesktopDrawer = ({ poets }: Props) => {
           open ? "ml-0" : "ml-0"
         }`}
       >
-        <Text>Main Content Area</Text>
+        <Text>
+        یک شاعر را از فهرست انتخاب کنید
+        </Text>
       </View>
     </View>
   );

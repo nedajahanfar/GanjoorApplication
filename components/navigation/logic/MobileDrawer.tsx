@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import type { Poet } from "../../../modules/poetType";
+import { Poet } from "../../../modules/poetSchema";
 
 type Props = {
   poets: Poet[];
